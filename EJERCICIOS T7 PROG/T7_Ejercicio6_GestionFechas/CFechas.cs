@@ -93,7 +93,6 @@ namespace T7_Ejercicio6_GestionFechas
         }
 
 
-
         public override string ToString()
         {
             return string.Format("{0} de {1} de {2}", _dia, (Meses)(_mes), _anio);
