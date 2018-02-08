@@ -98,6 +98,7 @@ namespace T7_Ejercicio6_GestionFechas
         {
             return string.Format("{0} de {1} de {2}", _dia, (Meses)(_mes), _anio);
         }
+
 		public string EscribirFechaCorta()
 		{
 			return string.Format("{0:D2}/{1:D2}/{2:D2}", _dia, _mes, _anio);
