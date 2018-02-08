@@ -22,33 +22,33 @@ namespace T7_Ejercicio6_GestionFechas
         {
             get { return _dia; }
             set {
-                //No hay días negativos ni que sean 0. 
-                if (value <= 0)
-                {
-                    throw new FechaNoValidaException(); //_correcto = false; 
-                }
-                //Mes de Febrero, caso especial, que tiene diferentes días si es el año bisiesto o no:
-                if (_mes == (int)Meses.Febrero && value > 28) 
-                {
-                    if (!EsBisiesto(_anio) && value > 28)//Si un año no es bisiesto Febrero tendrá 28 días y no podrá tener más de 28
-                        throw new FechaNoValidaException(); // _correcto = false; 
-                    else if (EsBisiesto(_anio) && value > 29) //Si un año es bisiesto Febrero tendrá 29 días
-                        throw new FechaNoValidaException(); //_correcto = false;
-                }
-                //Meses de 30 días:
-                if ((_mes == (int)Meses.Abril || _mes == (int)Meses.Junio || _mes == (int)Meses.Septiembre
-                    || _mes == (int)Meses.Noviembre) && value > 30) //No pueden tener más de 30 días
-					throw new FechaNoValidaException(); //_correcto = false; 
-                //Los que no son de 30 serán de 31 días:
-                if (value > 31 && (_mes == (int)Meses.Enero || _mes == (int)Meses.Marzo || _mes == (int)Meses.Mayo ||
-                    _mes == (int)Meses.Julio || _mes == (int)Meses.Agosto || _mes == (int)Meses.Octubre || _mes == (int)Meses.Diciembre))
-					throw new FechaNoValidaException(); //_correcto = false; 
+                    //No hay días negativos ni que sean 0. 
+                    if (value <= 0)
+                    {
+                        throw new FechaNoValidaException(); //_correcto = false; 
+                    }
+                    //Mes de Febrero, caso especial, que tiene diferentes días si es el año bisiesto o no:
+                    if (_mes == (int)Meses.Febrero && value > 28) 
+                    {
+                        if (!EsBisiesto(_anio) && value > 28)//Si un año no es bisiesto Febrero tendrá 28 días y no podrá tener más de 28
+                            throw new FechaNoValidaException(); // _correcto = false; 
+                        else if (EsBisiesto(_anio) && value > 29) //Si un año es bisiesto Febrero tendrá 29 días
+                            throw new FechaNoValidaException(); //_correcto = false;
+                    }
+                    //Meses de 30 días:
+                    if ((_mes == (int)Meses.Abril || _mes == (int)Meses.Junio || _mes == (int)Meses.Septiembre
+                        || _mes == (int)Meses.Noviembre) && value > 30) //No pueden tener más de 30 días
+					    throw new FechaNoValidaException(); //_correcto = false; 
+                    //Los que no son de 30 serán de 31 días:
+                    if (value > 31 && (_mes == (int)Meses.Enero || _mes == (int)Meses.Marzo || _mes == (int)Meses.Mayo ||
+                        _mes == (int)Meses.Julio || _mes == (int)Meses.Agosto || _mes == (int)Meses.Octubre || _mes == (int)Meses.Diciembre))
+					    throw new FechaNoValidaException(); //_correcto = false; 
 
-                else
-                {
-                    //_correcto = true;
-                    _dia = value;
-                }
+                    else
+                    {
+                        //_correcto = true;
+                        _dia = value;
+                    }
                 }
         }
 
