@@ -45,7 +45,6 @@ namespace T7_Ejercicio6_GestionFechas
 					CFechas fecha = new CFechas(anio, mes, dia);
 					correcto = true;
 
-					 //REVISAR febrero en bisiesto 29/2/2016 me sale -> dia = 0, WHY?
 					
                     Console.WriteLine("\n\n" + fecha.ToString());
 					Console.WriteLine(fecha.EscribirFechaCorta());
