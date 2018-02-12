@@ -10,15 +10,17 @@ namespace T7_Ejercicio6_GestionFechas
     public enum Meses { Enero = 1, Febrero, Marzo, Abril, Mayo, Junio, Julio, Agosto, Septiembre, Octubre, Noviembre, Diciembre }
 
     class CFechas
-    {
-        private int _dia;
+	{
+		#region Campos
+		private int _dia;
         private int _mes;
         private int _anio;
 
-        //private bool _correcto; //Lo quito y lo cambio por la excepción creada, para mejora de la clase CFechas ? 
+		//private bool _correcto; //Lo quito y lo cambio por la excepción creada, para mejora de la clase CFechas 
+		#endregion
 
-
-        public int Dia
+		#region Propiedades
+		public int Dia
         {
             get { return _dia; }
             set {
@@ -36,12 +38,10 @@ namespace T7_Ejercicio6_GestionFechas
                             throw new FechaNoValidaException(); //_correcto = false;
                     }
                     //Meses de 30 días:
-                    if ((_mes == (int)Meses.Abril || _mes == (int)Meses.Junio || _mes == (int)Meses.Septiembre
-                        || _mes == (int)Meses.Noviembre) && value > 30) //No pueden tener más de 30 días
+                    else if (MesesDe30Dias() && value > 30) //No pueden tener más de 30 días
 					    throw new FechaNoValidaException(); //_correcto = false; 
-                    //Los que no son de 30 serán de 31 días:
-                    if (value > 31 && (_mes == (int)Meses.Enero || _mes == (int)Meses.Marzo || _mes == (int)Meses.Mayo ||
-                        _mes == (int)Meses.Julio || _mes == (int)Meses.Agosto || _mes == (int)Meses.Octubre || _mes == (int)Meses.Diciembre))
+                    //Meses de 31 días. También valdría con un else, ya que los meses que no son de 30 días serán de 31
+                    else if (value > 31 && MesesDe31Dias())
 					    throw new FechaNoValidaException(); //_correcto = false; 
 
                     else
@@ -79,21 +79,25 @@ namespace T7_Ejercicio6_GestionFechas
         //{
         //    get { return _correcto; }
         //    set { _correcto = value; }
-        //}
+		//}
+		#endregion 
 
-        public CFechas(int anio, int mes,  int dia)
+		#region Constructor
+		public CFechas(int anio, int mes,  int dia)
         {
 			//Aquí tengo que asignarlo a las propiedades y no a los campos para que haga las comprobaciones de si son correctos al crear la fecha
 			this.Anio = anio;
 			this.Mes = mes;
-			this.Dia = dia; //Por qué Dia falla? No deja meter ninguno de mes 12
+			this.Dia = dia;
 
             //if (Dia == 0)
             //    thow new FechaNoValidaException(); //_correcto = false;
         }
+		#endregion
 
 
-        public override string ToString()
+		#region Métodos
+		public override string ToString()
         {
             return string.Format("{0} de {1} de {2}", _dia, (Meses)(_mes), _anio);
         }
@@ -117,6 +121,31 @@ namespace T7_Ejercicio6_GestionFechas
                 return true;
             else
                 return false;
-        }
-    }
+		}
+		/// <summary>
+		/// Método que devuelve true si el mes dado tiene 31 días
+		/// </summary>
+		/// <returns></returns>
+		public bool MesesDe31Dias()
+		{
+			if (_mes == (int)Meses.Enero || _mes == (int)Meses.Marzo || _mes == (int)Meses.Mayo ||
+				_mes == (int)Meses.Julio || _mes == (int)Meses.Agosto || _mes == (int)Meses.Octubre || _mes == (int)Meses.Diciembre)
+				return true;
+			else
+				return false;
+		}
+		/// <summary>
+		/// Método que devuelve true si el mes dado tiene 30 días
+		/// </summary>
+		/// <returns></returns>
+		public bool MesesDe30Dias()
+		{
+			if (_mes == (int)Meses.Abril || _mes == (int)Meses.Junio || _mes == (int)Meses.Septiembre || _mes == (int)Meses.Noviembre)
+				return true;
+			else
+				return false;
+		}
+
+		#endregion 
+	}
 }

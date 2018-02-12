@@ -44,11 +44,9 @@ namespace T7_Ejercicio6_GestionFechas
 
 					CFechas fecha = new CFechas(anio, mes, dia);
 					correcto = true;
-
 					
-                    Console.WriteLine("\n\n" + fecha.ToString());
-					Console.WriteLine(fecha.EscribirFechaCorta());
-                    correcto = true;
+                    Console.WriteLine("\n\n" + "Fecha con formato largo-> " + fecha.ToString());
+					Console.WriteLine("Fecha con formato corto-> " + fecha.EscribirFechaCorta());
 					
                     //else
                     //{
