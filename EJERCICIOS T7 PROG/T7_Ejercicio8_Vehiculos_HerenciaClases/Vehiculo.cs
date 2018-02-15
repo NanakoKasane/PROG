@@ -62,9 +62,9 @@ namespace T7_Ejercicio8_Vehiculos_HerenciaClases
         }
        
         //Métodos
-        public override string ToString()
+        public override string ToString() 
         {
-            return  "          NOMBRE: " + _nombre + "\n" +
+            return  "          NOMBRE: " + _nombre + "\n" + //Todo esto realmente tendría que hacerlo en vez de con espacios/tabulaciones con .PadRight y .PadLeft
                     "NÚMERO DE RUEDAS: " + _numeroRuedas + "\n" +
                     "           COLOR: " + _color + "\n" +
                     "   TIPO TRACCIÓN: " + _tipoTraccion + "\n";

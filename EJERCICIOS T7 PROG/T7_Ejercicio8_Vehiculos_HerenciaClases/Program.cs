@@ -11,7 +11,8 @@ namespace T7_Ejercicio8_Vehiculos_HerenciaClases
         static void Main(string[] args)
         {
             //Probando mostrar datos de una moto
-            Moto moto = new Moto(10, Moto.tipoCombustible.Mezcla, "Moto de prueba", 2, ConsoleColor.Blue, Vehiculo.tipoTraccion.Delantera);
+            //Usando el POLIFORMISMO en este caso:
+            Vehiculo moto = new Moto(10, Moto.tipoCombustible.Mezcla, "Moto de prueba", 2, ConsoleColor.Blue, Vehiculo.tipoTraccion.Delantera);
             Console.WriteLine(moto.ToString());
             Console.ReadLine();
 
@@ -33,7 +34,7 @@ namespace T7_Ejercicio8_Vehiculos_HerenciaClases
 
             //Vale, lo que me falta es arreglar el ToString() de las bicicletas ><
 
-            Console.ReadLine();
+            //Console.ReadLine();
         }
     }
 }
