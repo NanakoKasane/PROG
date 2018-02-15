@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace T7_Ejercicio8_Vehiculos_HerenciaClases
 {
-    class Vehiculo
+    //Abstracta porque no vas a crear un vehiculo sino que crearás coches, motos, etc... La Clase Vehículo es solo para que hereden de ella 
+    abstract class Vehiculo
     {        
         public enum tipoTraccion { Trasera, Delantera, Integral };
 
@@ -58,86 +59,16 @@ namespace T7_Ejercicio8_Vehiculos_HerenciaClases
         {
             get { return _color; }
             set { _color = value; }
-        }       
-
-    }
-
-
-    class Moto : Vehiculo
-    {        
-        public enum tipoCombustible { Mezcla, Normal };
-
-        //Campos
-        double _potencia;
-        tipoCombustible _tipoCombustible;
-
-        //Constructores
-        public Moto()
-        {
-            this._potencia = 0;
-            this._tipoCombustible = tipoCombustible.Normal;
         }
-        public Moto(double _potencia, tipoCombustible _tipoCombustible)
+       
+        //Métodos
+        public override string ToString()
         {
-            this._potencia = _potencia;
-            this._tipoCombustible = _tipoCombustible;
+            return  "          NOMBRE: " + _nombre + "\n" +
+                    "NÚMERO DE RUEDAS: " + _numeroRuedas + "\n" +
+                    "           COLOR: " + _color + "\n" +
+                    "   TIPO TRACCIÓN: " + _tipoTraccion + "\n";
         }
-
-        //Propiedades
-        public double Potencia
-        {
-            get { return _potencia; }
-            set {
-                    if (value < 0) //La potencia nunca podrá ser negativa
-                        _potencia = 0;
-                    else
-                        _potencia = value; 
-                }
-        }
-        public tipoCombustible TipoCombustible
-        {
-            get { return _tipoCombustible; }
-        }
-
-    }
-
-    class Coche : Vehiculo
-    {
-        public enum estado { Marchando, Parado };
-
-        //Campos
-        double _velocidadMaxima;
-        estado _estado;
-
-        //Constructores
-        public Coche()
-        {
-            this._velocidadMaxima = 0;
-            this._estado = estado.Parado;
-        }
-        public Coche(double _velocidadMaxima, estado _estado)
-        {
-            this._velocidadMaxima = _velocidadMaxima;
-            this._estado = _estado;
-        }
-
-        //Propiedades
-        private estado Estado //De solo lectura?
-        {
-            get { return _estado; }
-        }
-
-        public double VelocidadMaxima
-        {
-            get { return _velocidadMaxima; }
-            set {
-                    if (value < 0) //La velocidad tampoco puede ser negativa 
-                        _velocidadMaxima = 0; //value = 0;
-                    else
-                        _velocidadMaxima = value; 
-                }
-        }
-
 
     }
 

@@ -6,19 +6,21 @@ using System.Threading.Tasks;
 
 namespace T7_Ejercicio8_Vehiculos_HerenciaClases
 {
-    class Bicicleta : Vehiculo
+    //Abstracta porque no vas a crear un objeto bicicleta, sino que crearás de uno de sus 2 tipos que heredan de ella
+    abstract class Bicicleta : Vehiculo
     {
         //Campos
         double _precio;
         DateTime _fechaCompra;
 
         //Constructores
-        public Bicicleta()
+        public Bicicleta() : base()
         {
             this._precio = 0;
             this._fechaCompra = DateTime.Parse("01/01/2018");
         }
-        public Bicicleta(double precio, DateTime fechaCompra)
+        public Bicicleta(double precio, DateTime fechaCompra, string nombre, int numeroRuedas, ConsoleColor color, tipoTraccion tipo) 
+            : base(nombre, numeroRuedas, color, tipo)
         {
             this._precio = precio;
             this._fechaCompra = fechaCompra;
@@ -37,99 +39,12 @@ namespace T7_Ejercicio8_Vehiculos_HerenciaClases
             set { _fechaCompra = value; }
         }
 
-    }
-
-    class Paseo : Bicicleta
-    {
-        //Campos
-        int _numeroCestas;
-        string _modelo;
-        string _marca;
-
-        //Constructores
-        public Paseo()
+        //Métodos
+        public override string ToString()
         {
-            this._numeroCestas = 1;
-            this._modelo = "Vintage";
-            this._marca = "Monty City";
+            return  base.ToString() +
+                    "                 PRECIO: " + _precio + "\n" +
+                    "        FECHA DE COMPRA: " + _fechaCompra + "\n";
         }
-        public Paseo(int numeroCestas, string modelo, string marca)
-        {
-            this._numeroCestas = numeroCestas;
-            this._modelo = modelo;
-            this._marca = marca;
-        }
-
-        //Propiedades
-        public int NumeroCestas
-        {
-            get { return _numeroCestas; }
-            set {
-                    if (value < 0) //El número de cestas no puede ser negativo
-                        _numeroCestas = 0;
-                    else
-                        _numeroCestas = value; 
-                }
-        }
-
-        public string Modelo
-        {
-            get { return _modelo; }
-            set { _modelo = value; }
-        }
-
-        public string Marca
-        {
-            get { return _marca; }
-            set { _marca = value; }
-        }
-
-    }
-
-    class Montana : Bicicleta
-    {
-        //Campos
-        string _tipoAmortiguacion;
-        bool _kitReparacion;
-        double _diametroRueda;
-
-        //Constructores
-        public Montana()
-        {
-            this._tipoAmortiguacion = "";
-            this._kitReparacion = true;
-            this._diametroRueda = 0;
-        }
-        public Montana(string tipoAmortiguacion, bool kitReparacion, double diametroRueda)
-        {
-            this._tipoAmortiguacion = tipoAmortiguacion;
-            this._kitReparacion = kitReparacion;
-            this._diametroRueda = diametroRueda;
-        }
-
-        //Propiedades
-        public string TipoAmortiguacion
-        {
-            get { return _tipoAmortiguacion; }
-            set { _tipoAmortiguacion = value; }
-        }
-
-        public bool KitReparacion
-        {
-            get { return _kitReparacion; }
-            set { _kitReparacion = value; }
-        }
-
-        public double DiametroRueda
-        {
-            get { return _diametroRueda; }
-            set {
-                    if (value < 0) //El diámetro no podrá ser negativo
-                        _diametroRueda = 0;
-                    else
-                        _diametroRueda = value; 
-                }
-        }
-
     }
 }
