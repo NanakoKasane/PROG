@@ -43,8 +43,8 @@ namespace T7_Ejercicio8_Vehiculos_HerenciaClases
         public override string ToString()
         {
             return  base.ToString() +
-                    "                 PRECIO: " + _precio + "\n" +
-                    "        FECHA DE COMPRA: " + _fechaCompra + "\n";
+                    "         PRECIO: " + _precio + "\n" +
+                    "FECHA DE COMPRA: " + _fechaCompra + "\n";
         }
     }
 }
