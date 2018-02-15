@@ -83,13 +83,24 @@ namespace T7_Ejercicio4_ClaseNumeros
 
         public int FibonacciIterativo(int numeroMeses)
         {
-            int total = 1;
+            int[] array = new int[3]; //Tendrá 3 posiciones, la primera es la del (nMeses -1) y la segunda (nMeses -2). La tercera será el resultado de sumar estas 2 posiciones
+            array[0] = 1; //Primer mes es 1 en la primera iteración
+            array[1] = 1; //Segundo mes es 1 en la primera iteración
 
-            for (int i = 1; i < numeroMeses; i++)
+            if (numeroMeses == 0)
+                return 1;
+            if (numeroMeses == 1)
+                return 1;
+
+            for (int i = 2; i < numeroMeses + 1; i++) //Desde el mes 2 al número de meses
             {
-                total += (i - 1) + (i - 2);
+                array[2] = array[1] + array[0]; //Es como el Recursivo, llama a (mes -1) + (mes -2) --> Que está guardado en las 2 primeras posiciones del array
+                
+                //Y por cada iteración del bucle, guardas nuevos valores en el array de 3 posiciones. Los valores anteriores calculados, siempre dejando la última posición para el resultado 
+                array[0] = array[1];
+                array[1] = array[2];
             }
-            return total;
+            return array[2];
         }
         #endregion 
 
