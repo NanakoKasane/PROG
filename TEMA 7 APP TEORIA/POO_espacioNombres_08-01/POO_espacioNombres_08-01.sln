@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "POO_espacioNombres_08-01", "POO_espacioNombres_08-01.csproj", "{B627B5B9-693C-4D40-84D2-101B594C50AD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B627B5B9-693C-4D40-84D2-101B594C50AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B627B5B9-693C-4D40-84D2-101B594C50AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B627B5B9-693C-4D40-84D2-101B594C50AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B627B5B9-693C-4D40-84D2-101B594C50AD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

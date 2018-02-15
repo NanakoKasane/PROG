@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>POO_ComparacionOrdenacion_IComparable_07-02</name>
+    </assembly>
+    <members>
+        <member name="M:Marina.POO_ComparacionOrdenacion_IComparable_07_02.Persona.#ctor(System.String,System.String,System.Int32)">
+            <summary>
+            Construye una Persona
+            </summary>
+            <param name="apellido"></param>
+            <param name="nombre"></param>
+            <param name="codigo"></param>
+        </member>
+        <member name="M:Marina.POO_ComparacionOrdenacion_IComparable_07_02.Persona.ToString">
+            <summary>
+            Muestra los datos de una Persona por pantalla
+            </summary>
+            <returns>String con los datos de la persona en orden: código, nombre, apellidos</returns>
+        </member>
+        <member name="M:Marina.POO_ComparacionOrdenacion_IComparable_07_02.Persona.CompareTo(Marina.POO_ComparacionOrdenacion_IComparable_07_02.Persona)">
+            <summary>
+            Ordena la persona por su código
+            </summary>
+            <param name="otra"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Marina.POO_ComparacionOrdenacion_IComparable_07_02.Persona.Nombre">
+            <summary>
+            Nombre de la Persona
+            </summary>
+        </member>
+        <member name="P:Marina.POO_ComparacionOrdenacion_IComparable_07_02.Persona.Apellidos">
+            <summary>
+            Apellido de la Persona
+            </summary>
+        </member>
+        <member name="P:Marina.POO_ComparacionOrdenacion_IComparable_07_02.Persona.Codigo">
+            <summary>
+            Código de la Persona
+            </summary>
+        </member>
+        <member name="T:Marina.POO_ComparacionOrdenacion_IComparable_07_02.Persona.OrdenaNombre">
+            <summary>
+            Ordena la Persona por Nombre
+            </summary>
+        </member>
+        <member name="T:Marina.POO_ComparacionOrdenacion_IComparable_07_02.Persona.OrdenaApellido">
+            <summary>
+            Ordena la Persona por Apellido
+            </summary>
+        </member>
+    </members>
+</doc>
