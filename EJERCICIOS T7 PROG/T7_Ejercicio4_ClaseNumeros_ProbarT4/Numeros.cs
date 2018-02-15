@@ -68,17 +68,28 @@ namespace T7_Ejercicio4_ClaseNumeros
         }       
         #endregion 
 
-        #region Fibonacci
-        public int Fibonacci(int numeroMeses)
+        #region Fibonacci Recursivo e Iterativo
+        public int FibonacciRecursivo(int numeroMeses)
         {
             if (numeroMeses == 0)
-                return 0; // sería return 1 si contamos que el primer mes ya hay una pareja de adultos (todo lo demás sería igual)
+                return 1; // sería return 1 si contamos que el primer mes ya hay una pareja de adultos (todo lo demás sería igual)
 
             if (numeroMeses == 1)
                 return 1;
 
             else
-                return (Fibonacci(numeroMeses - 1) + Fibonacci(numeroMeses - 2));
+                return (FibonacciRecursivo(numeroMeses - 1) + FibonacciRecursivo(numeroMeses - 2));
+        }
+
+        public int FibonacciIterativo(int numeroMeses)
+        {
+            int total = 1;
+
+            for (int i = 1; i < numeroMeses; i++)
+            {
+                total += (i - 1) + (i - 2);
+            }
+            return total;
         }
         #endregion 
 

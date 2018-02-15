@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // La información general sobre un ensamblado se controla mediante el siguiente 
 // conjunto de atributos. Cambie estos atributos para modificar la información
 // asociada con un ensamblado.
-[assembly: AssemblyTitle("T7_Ejercicio4_ClaseNumeros")]
+[assembly: AssemblyTitle("T7_Ejercicio8_Vehiculos_HerenciaClases")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("T7_Ejercicio4_ClaseNumeros")]
+[assembly: AssemblyProduct("T7_Ejercicio8_Vehiculos_HerenciaClases")]
 [assembly: AssemblyCopyright("Copyright ©  2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // El siguiente GUID sirve como identificador de typelib si este proyecto se expone a COM
-[assembly: Guid("0f98c753-6d45-4000-a259-6f2f2536e244")]
+[assembly: Guid("329b7da2-4bdc-4f47-99e1-19707c41ffe6")]
 
 // La información de versión de un ensamblado consta de los cuatro valores siguientes:
 //

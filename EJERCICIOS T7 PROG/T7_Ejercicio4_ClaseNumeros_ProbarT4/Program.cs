@@ -232,7 +232,8 @@ namespace T7_Ejercicio4_ClaseNumeros
             int numeroMeses = 0;
             bool error = true;
             const int MAXIMO = 35;
-            Numeros numero = new Numeros();
+            Numeros numero1 = new Numeros();
+            Numeros numero2 = new Numeros();
 
             //Información del programa
             Console.WriteLine("NÚMERO DE FIBONACCI");
@@ -254,9 +255,11 @@ namespace T7_Ejercicio4_ClaseNumeros
             } while (error || numeroMeses < 0 || numeroMeses > MAXIMO);
 
             //Resultado
-            Console.WriteLine("\nEl número de conejos que habrá en {0} meses será de: {1}", numeroMeses, numero.Fibonacci(numeroMeses));
+            Console.WriteLine("\nEl número de conejos (RECURSIVO) que habrá en {0} meses será de: {1}", numeroMeses, numero1.FibonacciRecursivo(numeroMeses));
+            Console.WriteLine("\nEl número de conejos (ITERATIVO) que habrá en {0} meses será de: {1}", numeroMeses, numero2.FibonacciIterativo(numeroMeses));
 			Console.ReadLine();
 
         }
+
     }
 }
