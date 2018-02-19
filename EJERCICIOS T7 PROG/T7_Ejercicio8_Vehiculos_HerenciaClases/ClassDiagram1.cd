@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="T7_Ejercicio8_Vehiculos_HerenciaClases.Bicicleta" Collapsed="true">
+    <Position X="1.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAASAAAAAQAAAAAAAAAAAEA=</HashCode>
+      <FileName>Bicicleta.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="T7_Ejercicio8_Vehiculos_HerenciaClases.Coche" Collapsed="true">
+    <Position X="7.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAAAAAEAAAAAABAAAAAAAAAAAAAQAAAAAg=</HashCode>
+      <FileName>Coche.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="T7_Ejercicio8_Vehiculos_HerenciaClases.Montana" Collapsed="true">
+    <Position X="2.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAAAAAAAAEgQQAAAAAAAAACAAAAAAAAAIAAAA=</HashCode>
+      <FileName>Montana.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="T7_Ejercicio8_Vehiculos_HerenciaClases.Moto" Collapsed="true">
+    <Position X="5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAEAAAAAAAEAAAAAAAAAAAAAAAAAAAABABAAAA=</HashCode>
+      <FileName>Moto.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="T7_Ejercicio8_Vehiculos_HerenciaClases.Paseo" Collapsed="true">
+    <Position X="0.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAAACQAAEAAIAAAAAAAAACAAAAAgAAAAAAAA=</HashCode>
+      <FileName>Paseo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="T7_Ejercicio8_Vehiculos_HerenciaClases.Program" Collapsed="true">
+    <Position X="9.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="T7_Ejercicio8_Vehiculos_HerenciaClases.Vehiculo" Collapsed="true">
+    <Position X="3.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAAIAAAEAAAAgAAAAAAAAAAEAAAAoAIAAAA=</HashCode>
+      <FileName>Vehiculo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
