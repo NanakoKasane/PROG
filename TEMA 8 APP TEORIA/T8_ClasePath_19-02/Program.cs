@@ -15,11 +15,16 @@ namespace T8_ClasePath_19_02
             //Extraer solo los nombres de las imágenes -> Ejercicio de examen
 
             string rutafichero = @"C:\dir1\dir2\dir3\dir4\datos.dat";
+            string rutaUniversal = Path.DirectorySeparatorChar + "datos" + Path.DirectorySeparatorChar; // + etc...
+
             VerDatos(rutafichero);
 
             //Cambiar extensión
-            rutafichero = Path.ChangeExtension(rutafichero, "IES"); //.IES --> Sería lo mismo
+            rutafichero = Path.ChangeExtension(rutafichero, "IES"); //.IES --> Sería lo mismo, no pone "..", simplemente no le añade otro "." más solo si ya está
             VerDatos(rutafichero);
+
+            
+
 
         }
 
