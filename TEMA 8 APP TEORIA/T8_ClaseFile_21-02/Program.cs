@@ -12,7 +12,7 @@ namespace T8_ClaseFile_21_02
     {
         static void Main(string[] args)
         {
-            string ruta = @"c:\basura\prueba.txt";
+            string ruta = @"C:\Users\Alumno1718\Desktop\PROG\TEMA 8 APP TEORIA\ficheros\prueba.txt";
             string texto = "hola Caracola";
             string nuevaLinea = "\r\n"; //El block de notas para hacer un salto de lineas necesita \r\n
 
