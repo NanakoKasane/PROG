@@ -16,6 +16,9 @@ namespace T8_ClaseFile_21_02
             string texto = "hola Caracola";
             string nuevaLinea = "\r\n"; //El block de notas para hacer un salto de lineas necesita \r\n
 
+            Console.WriteLine("Atributos: {0}", File.GetAttributes(ruta)); // Obtiene los atributos del fichero (si es de solo lectura, oculto,si es un archivo...)
+
+
             for (int i = 0; i < 10; i++)
             {
                 File.AppendAllText(ruta, texto + "_" + i.ToString("000") + nuevaLinea);  //Te añade el texto al fichero de esa ruta. Si el fichero no existe, lo crea          
