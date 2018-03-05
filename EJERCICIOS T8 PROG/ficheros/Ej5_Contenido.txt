@@ -1,0 +1,4 @@
+﻿- Fichero: Hola soy un fichero.
+- Yo: Lo sé, ¡Buenos días fichero!
+- Fichero: ¿Qué tal?
+- Yo: Genial, aquí programándote en C#

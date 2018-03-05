@@ -1,0 +1,3 @@
+Usuario: a                  | Fecha: 03/03/2018     | Hora: 17:56     | Tiempo transcurrido (milisegundos): 1251                
+Usuario: a                  | Fecha: 03/03/2018     | Hora: 17:56     | Tiempo transcurrido (milisegundos): 775                 
+Usuario: aa                 | Fecha: 03/03/2018     | Hora: 17:56     | Tiempo transcurrido (milisegundos): 725                 
