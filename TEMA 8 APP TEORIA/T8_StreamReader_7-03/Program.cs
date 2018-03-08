@@ -48,6 +48,7 @@ namespace T8_StringReader_7_03
             //Abre el fichero de texto, separa los campos de ";" y buscas si está.
 
             //Buscar el usuario y la contraseña está a continuación
+            //O --> Recorro, añado a un diccionario siendo el usuario la clave y la contraseña el campo
         }
 
         static void VerUnoAUno(StreamReader fichero)
