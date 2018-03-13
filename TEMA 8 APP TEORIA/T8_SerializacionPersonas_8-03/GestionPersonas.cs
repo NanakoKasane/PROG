@@ -65,8 +65,8 @@ namespace T8_SerializacionPersonas_8_03
                     catch (Exception e)
                     { //break;
                         error = true; //Cuando acaba de escribir lo que haya, entra por aquí y para
-                        Console.WriteLine(e.Message);
-                        Console.ReadLine();
+                        //Console.WriteLine(e.Message);
+                        //Console.ReadLine();
                         break;
                     }
                 }

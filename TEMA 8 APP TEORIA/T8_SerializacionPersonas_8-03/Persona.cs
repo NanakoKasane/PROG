@@ -52,7 +52,7 @@ namespace T8_SerializacionPersonas_8_03
 
         public override string ToString()
         {
-            return _miNombre.PadRight(20); // Apellidos.PadRight(30) + Nombre.PadRight(20) + Sueldo.ToString().PadRight(9);
+            return _apellidos.PadRight(30).ToString() + _miNombre.PadRight(30).ToString(); // Apellidos.PadRight(30) + Nombre.PadRight(20) + Sueldo.ToString().PadRight(9);
         }
 
 
