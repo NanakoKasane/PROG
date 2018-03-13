@@ -16,7 +16,7 @@ namespace T8_Ejercicio14_ComandosMSDOS
 
 
 
-
+			//COMANDOS
             if (args[0].ToUpper() == "help".ToUpper() && args.Length == 1)
                 ComandoHelp();
             else if (args[0].ToUpper() == "help".ToUpper())
@@ -27,7 +27,6 @@ namespace T8_Ejercicio14_ComandosMSDOS
             else if (args[0].ToUpper() == "dir".ToUpper())
                 Error();
 
-            //Probar desde aquí:
             if (args[0].ToUpper() == "copy".ToUpper() && (args.Length > 2))
                 ComandoCopy(args);
             else if (args[0].ToUpper() == "copy".ToUpper())
@@ -38,37 +37,49 @@ namespace T8_Ejercicio14_ComandosMSDOS
             else if (args[0].ToUpper() == "type".ToUpper())
                 Error();
 
-            if (args[0].ToUpper() == "find".ToUpper() && (args.Length > 3))
+            if (args[0].ToUpper() == "find".ToUpper() && (args.Length >= 3))
                 ComandoFind(args);
             else if (args[0].ToUpper() == "find".ToUpper())
                 Error();
+
+			if (args[0].ToUpper() == "delete".ToUpper() && args.Length == 2)
+				ComandoDelete(args);
+			else if (args[0].ToUpper() == "delete".ToUpper())
+				Error();
 
 
 
         }
 
+		/// <summary>
+		/// Mensaje de error si se introduce mal algún comando
+		/// </summary>
         static void Error()
         {
             Console.WriteLine("Algunos argumentos no son válidos");
             Console.ReadKey(true);
         }
 
+		#region comando HELP 
         static void ComandoHelp()
         {
                 //Comandos:
-                Console.WriteLine("\nHELP                              Proporciona información de ayuda sobre los \t\t\t\t\t  comandos");
+                Console.WriteLine("\nHELP                              Proporciona información de ayuda sobre los comandos");
                 Console.WriteLine("\nDIR [ruta]                        Muestra los directorios y ficheros de la ruta.\n\t\t\t\t  Si no se especifica ruta, toma la actual");
                 Console.WriteLine("\nCOPY (fichero/sOrigen) (destino)  Copia uno o varios ficheros a otra ruta");
-                Console.WriteLine("\nTYPE (rutaArchivo)                Muestra por pantalla el contenido de un      \t\t\t\t\t  archivo de texto");
+                Console.WriteLine("\nTYPE (rutaArchivo)                Muestra por pantalla el contenido de un archivo de texto");
                 Console.WriteLine("\nFIND \"cadena\" (archivo/s)         Busca una cadena de texto en uno/más archivos");
+				Console.WriteLine("\nDELETE (ruta)                     Elimina el directorio o fichero de la ruta especificada.");
                 //Recuerda poner .toUpper en los comandos para poder escribir en mayúscula o minúscula        
                 Console.ReadKey(true);
 
                 //Hay que bucar los comandos en la ruta nuestra. Añadiendo ";" y ruta a PATH. Ponerlo antes
                 //O en Windows --> Sistema y seguridad -> Sistema -> Configuración avanzada del sistema -> Variable de entorno -> Buscar "Path" -> Editar... Y subirla/ponerla la primera la nueva ruta
         }
+		#endregion 
 
-        static void ComandoDir(string[] argumentos, string ruta)
+		#region Comando DIR
+		static void ComandoDir(string[] argumentos, string ruta)
         {
             string rutaArchivo = "";
             if (argumentos.Length == 1)
@@ -105,10 +116,12 @@ namespace T8_Ejercicio14_ComandosMSDOS
             }
             Console.ReadKey(true);
         }
+		#endregion 
 
-        static void ComandoCopy(string[] argumentos)
+		#region Comando COPY 
+		static void ComandoCopy(string[] argumentos)
         {
-            for (int i = 1; i < argumentos.Length; i++)
+            for (int i = 1; i < argumentos.Length - 1; i++)
             {
                 if (!File.Exists(argumentos[i]))
                 {
@@ -118,23 +131,37 @@ namespace T8_Ejercicio14_ComandosMSDOS
                 }
             }
 
+			if (!Directory.Exists(Path.GetDirectoryName(argumentos[argumentos.Length - 1])))
+			{
+				Console.WriteLine("Alguna ruta no existe");
+				Console.ReadLine();
+				return;
+			}
+
             for (int i = 1; i < argumentos.Length -1; i++)//El último es al que vamos a copiar los archivos. Último parámetro-> rutaDestino
             {
-                File.Copy(argumentos[i], argumentos[argumentos.Length - 1]);
+				string contenido = File.ReadAllText(argumentos[i]);
+				File.AppendAllText(argumentos[argumentos.Length - 1], contenido);
             }
-
+			
         }
+		#endregion 
 
-        static void ComandoType(string[] argumentos)
+		#region Comando TYPE
+		static void ComandoType(string[] argumentos)
         {
             string rutaArchivo = argumentos[1];
+			if (!File.Exists(rutaArchivo))
+				return;
             string contenido = File.ReadAllText(rutaArchivo, Encoding.Default);
             Console.WriteLine(contenido);
             Console.ReadLine();
 
         }
+		#endregion 
 
-        static void ComandoFind(string[] argumentos)
+		#region Comando FIND
+		static void ComandoFind(string[] argumentos)
         {
             string cadena = argumentos[1];
 
@@ -157,7 +184,29 @@ namespace T8_Ejercicio14_ComandosMSDOS
                 }
             }
             Console.ReadLine();
-        }
+		}
+		#endregion 
 
-    }
+		#region Comando DELETE
+		static void ComandoDelete(string[] argumentos)
+		{
+			string ruta = argumentos[1];
+			if (File.Exists(ruta))
+			{
+				File.Delete(ruta);
+				Console.WriteLine("Fichero borrado");
+				Console.ReadLine();
+			}
+
+
+			if (Directory.Exists(ruta))
+			{
+				Directory.Delete(ruta, false);
+				Console.WriteLine("Directorio borrado");
+				Console.ReadLine();
+			}
+		}
+		#endregion 
+
+	}
 }
