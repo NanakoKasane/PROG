@@ -30,16 +30,38 @@ namespace ListaLetras_15_03
 
         private void btnAnterior_Click(object sender, RoutedEventArgs e)
         {
-            if (indice == 0)
-                indice = texto.Length -1;
-            lblContenedor.Content = texto[indice--]; 
+            if (indice == 0) //false para indicar que no está habilitado el botón
+                btnAnterior.IsEnabled = false; //indice = texto.Length -1;
+
+            else
+            {
+                if (!btnAnterior.IsEnabled)
+                    btnAnterior.IsEnabled = true;
+                lblContenedor.Content = texto[--indice];
+            }
+
+            //Habilita de nuevo el botón Siguiente
+            if (!btnSiguiente.IsEnabled)
+                btnSiguiente.IsEnabled = true;
 
 
         }
 
         private void btnSiguiente_Click(object sender, RoutedEventArgs e)
         {
-            lblContenedor.Content = texto[indice++ % texto.Length]; //Circular para que no se salga 
+            if (indice == texto.Length -1)
+                btnSiguiente.IsEnabled = false;
+
+            else
+            {
+                if (!btnSiguiente.IsEnabled)
+                    btnSiguiente.IsEnabled = true;
+                lblContenedor.Content = texto[++indice % texto.Length]; //Circular para que no se salga 
+            }
+
+            //Habilita de nuevo el botón Anterior
+            if (!btnAnterior.IsEnabled)
+                btnAnterior.IsEnabled = true;
 
         }
     }
