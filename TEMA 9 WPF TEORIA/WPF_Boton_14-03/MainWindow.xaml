@@ -3,25 +3,42 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        <Button 
-                x:Name="MiBoton"
-                HorizontalAlignment="Left" 
-                Margin="193,94,0,0" 
-                VerticalAlignment="Top" 
-                Width="118" Click="Button_Click" Height="58" KeyDown="MiBoton_KeyDown" BorderBrush="#FFFF4E0B" Foreground="#FF0017FF" FontFamily="Showcard Gothic">
-            <Button.Background>
-                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
-                    <GradientStop Color="#FFF3F3F3" Offset="0"/>
-                    <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
-                    <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
-                    <GradientStop Color="#FFE25555" Offset="1"/>
-                </LinearGradientBrush>
-            </Button.Background>
-            Púlsame
-        </Button>
-        <!-- El texto se puede poner en el atributo Content="Púlsame", o escrito entre la etiqueta de inicio y fin de Button -->
-        <!-- Hay que ponerle nombre al botón para poderte referir a él en el evento -->
+        <StackPanel Orientation="Horizontal" Background="Aqua" Height="400" Width="500"> <!-- Panel para agrupar controles -->
+            <Button 
+                    x:Name="MiBoton"
+                
+                    Width="118" Click="Button_Click" Height="58" KeyDown="MiBoton_KeyDown" BorderBrush="#FFFF4E0B" Foreground="#FF0017FF" FontFamily="Showcard Gothic">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                        <GradientStop Color="#FFF3F3F3" Offset="0"/>
+                        <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+                        <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+                        <GradientStop Color="#FFE25555" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+                Púlsame
+            </Button>
+            <!-- El texto se puede poner en el atributo Content="Púlsame", o escrito entre la etiqueta de inicio y fin de Button -->
+            <!-- Hay que ponerle nombre al botón para poderte referir a él en el evento -->
 
+            <Button 
+                    x:Name="MiBoton2"
+                    Margin="10"
+
+                    Width="118" Click="Button_Click" Height="58" KeyDown="MiBoton_KeyDown" BorderBrush="#FFFF4E0B" Foreground="#FF0017FF" FontFamily="Showcard Gothic">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                        <GradientStop Color="#FFF3F3F3" Offset="0"/>
+                        <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+                        <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+                        <GradientStop Color="#FFE25555" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+                Púlsame
+            </Button>
+            
+        </StackPanel>
+        
         
         <!-- El código que se debe hacer en el .cs también se puede hacer aquí (no recomendable), en la etiqueta x:code y dentro en CDATA-->
         <x:Code>
