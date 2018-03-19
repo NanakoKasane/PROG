@@ -1,0 +1,19 @@
+﻿<Window x:Class="WPF_Grid_19_03.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/> <!-- Se adapta al contenido -->
+                <ColumnDefinition Width="*"/> 
+                <ColumnDefinition Width="2*"/> <!-- Ocupará el doble de lo que ocupa el 1* -->
+                
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0">Botón 1</Button>
+            <Button Grid.Column="1">Botón 2</Button>
+            <Button Grid.Column="2">Botón 3</Button>
+
+        </Grid>
+    </Grid>
+</Window>
