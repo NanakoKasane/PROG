@@ -1,0 +1,12 @@
+﻿<Window x:Class="WPF_PanelCanvas_21_03.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid Background="#FF1423B8">
+        <Canvas Name="cnvPanel" HorizontalAlignment="Left" Height="222" Margin="58,55,0,0" VerticalAlignment="Top" Width="380" Background="#FFB4F1FF">
+            <Rectangle Fill="#FF1E1ED8" Height="21" Canvas.Left="76" Stroke="Black" Canvas.Top="166" Width="24"/>
+        </Canvas>
+        <Button Name="btnAnadir" Content="Añadir rectángulo" HorizontalAlignment="Left" Margin="58,10,0,0" VerticalAlignment="Top" Width="122" Click="Button_Click"/>
+
+    </Grid>
+</Window>
