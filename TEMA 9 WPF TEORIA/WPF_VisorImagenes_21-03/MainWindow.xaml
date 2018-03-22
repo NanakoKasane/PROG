@@ -1,0 +1,15 @@
+﻿<Window x:Class="WPF_VisorImagenes_21_03.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+
+    <ScrollViewer HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Visible"> <!-- Para que se vean ambos Scroll -->
+        <StackPanel Orientation="Vertical">
+            <Image Source="imagenes/marcelinexchicle.png" Width="100" Height="102"/>
+            <Image Source="imagenes/marcelinexchicle.png" Width="100" Height="102"/>
+            <Image Source="imagenes/marcelinexchicle.png" Width="100" Height="102"/>
+            <Image Source="imagenes/marcelinexchicle.png" Width="100" Height="102"/>
+        </StackPanel>      
+    </ScrollViewer>
+    
+</Window>
