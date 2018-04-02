@@ -1,0 +1,30 @@
+﻿<Window x:Class="WPF_TiposBotones_22_03.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Tipos de Botones" Height="350" Width="525">
+    <Grid Name="grdColor">
+        <Button Name="btnAccion" Content="PÚLSAME" HorizontalAlignment="Left" Margin="46,56,0,0" VerticalAlignment="Top" Width="75" MouseEnter="btnAccion_MouseEnter" MouseLeave="btnAccion_MouseLeave"/>
+        <Button Content="Botón 2" HorizontalAlignment="Left" Margin="46,83,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Content="Botón 3" HorizontalAlignment="Left" Margin="46,110,0,0" VerticalAlignment="Top" Width="75"/>
+
+        <!-- Estos botones suelen ir en un StackPanel -->
+        <StackPanel HorizontalAlignment="Left" Height="73" Margin="173,59,0,0" VerticalAlignment="Top" Width="104" Background="#FF32FBFB">
+            <RadioButton Name="rbtBlanco" IsChecked="True" Content="Blanco" Background="White" Click="Click_Color"/>
+            <RadioButton Name="rbtRojo" Content="Rojo" Background="Red" Click="Click_Color"/>
+            <RadioButton Name="rbtAzul" Content="Azul" Background="Blue" Click="Click_Color"/>
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Left" Height="73" Margin="334,59,0,0" VerticalAlignment="Top" Width="137" Background="#FFFF9898">
+            <CheckBox Name="cbxColor" Content="Color del rectángulo" Checked="cbxColor_Checked" Unchecked="cbxColor_Unchecked" />
+            <CheckBox Content="CheckBox"/>
+            <CheckBox Content="CheckBox"/>
+        </StackPanel>
+        <Rectangle Name="recPanel" Fill="White" HorizontalAlignment="Left" Height="100" Margin="46,177,0,0" Stroke="Black" VerticalAlignment="Top" Width="100"/>
+        <TextBlock Name="tblInfo" Background="Azure" Visibility="Hidden" Text="En un lugar de la mancha de cuyo..." HorizontalAlignment="Left" Margin="234,209,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="68" Width="203"/>
+        <Slider Name="sldCambiar" Maximum="100" HorizontalAlignment="Left" Margin="220,267,0,0" VerticalAlignment="Top" Width="262" ValueChanged="sldCambiar_ValueChanged"/>
+
+        
+        <Image Name="imgFoto" Source="imagenes/marcelinexchicle.png" Margin="46,177,371,43"></Image>
+        <TextBlock Name="tblValorSlider" HorizontalAlignment="Left" Margin="249,294,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="es-es" Text=""/></TextBlock>
+
+    </Grid>
+</Window>
