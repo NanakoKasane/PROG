@@ -27,7 +27,7 @@
         
         
         <Label Content="Establecer alarma: " HorizontalAlignment="Left" Margin="96,10,0,0" VerticalAlignment="Top" Background="{x:Null}" FontWeight="Bold"/>
-        <TextBox Text="Hora" Name="tbx_HoraAlarma" HorizontalAlignment="Left" Height="23" Margin="101,36,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="54"/>
+        <TextBox Text="Hora" Name="tbx_HoraAlarma" HorizontalAlignment="Left" Height="23" Margin="101,36,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="66"/>
         <DatePicker Name="dpk_FechaAlarma" HorizontalAlignment="Left" Margin="172,35,0,0" VerticalAlignment="Top" Width="157"/>
         <Button Name="btnAlarma" Content="Confirmar" HorizontalAlignment="Left" Margin="334,36,0,0" VerticalAlignment="Top" Width="75" Click="btnAlarma_Click"/>
 

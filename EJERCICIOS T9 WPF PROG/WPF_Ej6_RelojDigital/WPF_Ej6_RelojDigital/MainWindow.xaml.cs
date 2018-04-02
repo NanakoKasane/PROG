@@ -23,7 +23,8 @@ namespace WPF_Ej6_RelojDigital
 		System.Windows.Threading.DispatcherTimer reloj = new System.Windows.Threading.DispatcherTimer();
 		TimeSpan horaAlarma;
 		DateTime fechaAlarma;
-		TimeSpan horaActual = new TimeSpan(DateTime.Now.Hour, DateTime.Now.Minute, DateTime.Now.Second);
+        TimeSpan horaActual; // new TimeSpan(DateTime.Now.Hour, DateTime.Now.Minute, DateTime.Now.Second);
+        
 
 
 		public MainWindow()
@@ -44,8 +45,19 @@ namespace WPF_Ej6_RelojDigital
 		//Inicio el reloj con la hora actual:
 		void hora_Tick(object sender, EventArgs e)
 		{
-			DateTime horaActual = DateTime.Now;
-			lblHora.Content = string.Format("{0:D2}:{1:D2}:{2:D2}", horaActual.Hour, horaActual.Minute, horaActual.Second);
+			DateTime horaNow = DateTime.Now;
+			lblHora.Content = string.Format("{0:D2}:{1:D2}:{2:D2}", horaNow.Hour, horaNow.Minute, horaNow.Second);
+
+            horaActual = TimeSpan.Parse(lblHora.Content.ToString());
+
+            //Compruebo si el Tick actual coincide con el de la alarma, y si coincide, suena el Beep
+            if (horaActual == horaAlarma && fechaAlarma.Date == DateTime.Parse(tblFechaAhora.Text))
+            {
+                Console.Beep();
+                MessageBox.Show("¡¡¡ALARMA!!!");
+            }
+
+
 		}
 
 		/// <summary>
@@ -106,17 +118,6 @@ namespace WPF_Ej6_RelojDigital
 				MessageBox.Show("La fecha/hora introducida no es válida");
 				tbx_HoraAlarma.Focus();
 				tbx_HoraAlarma.SelectAll();
-			}
-
-		}
-
-
-		//Evento que se inicie siempre y compruebe si la hora actual es la de la alarma, y si lo es, suena la alarma
-		private void lblHora_Siempre()
-		{
-			if (horaActual == horaAlarma && fechaAlarma == DateTime.Parse(tblFechaAhora.Text))
-			{
-				Console.Beep(33, 1000);
 			}
 
 		}
