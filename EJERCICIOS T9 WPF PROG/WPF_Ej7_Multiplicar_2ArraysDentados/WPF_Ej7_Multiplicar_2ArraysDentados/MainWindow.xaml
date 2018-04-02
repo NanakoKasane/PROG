@@ -1,0 +1,72 @@
+﻿<Window x:Class="WPF_Ej7_Multiplicar_2ArraysDentados.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Ejercicio 07: Multiplicar Dos Matrices Dentadas" Height="350" Width="525"
+        ResizeMode="NoResize">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF41FFFF" Offset="0"/>
+                <GradientStop Color="#FF04FFA4" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Label Content="Matriz 01:" HorizontalAlignment="Left" Margin="47,61,0,0" VerticalAlignment="Top" Width="90" Foreground="Red" FontWeight="Bold"/>
+        <Label Content="Matriz 02:" HorizontalAlignment="Left" Margin="160,61,0,0" VerticalAlignment="Top" Width="90" Foreground="Red" FontWeight="Bold"/>
+        <Label Content="Producto de las matrices:" HorizontalAlignment="Left" Margin="308,61,0,0" VerticalAlignment="Top" Width="169" Foreground="Red" FontWeight="Bold"/>
+
+        <!-- Matriz 01 -->
+        <Grid HorizontalAlignment="Left" Height="84" Margin="53,112,0,0" VerticalAlignment="Top" Width="52" Background="#FF7D83FF">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBox Name="tbx_M1_00" Grid.Row="0" Grid.Column="0" Background="#FFDDDDDD" Foreground="Red" BorderBrush="#FFFF0C00"/>
+            <TextBox Name="tbx_M1_10" Grid.Row="1" Grid.Column="0" Background="#FFDDDDDD" Foreground="Red" BorderBrush="#FFFF0C00"/>
+            <TextBox Name="tbx_M1_20" Grid.Row="2" Grid.Column="0" Background="#FFDDDDDD" Foreground="Red" BorderBrush="#FFFF0C00"/>
+
+        </Grid>
+        
+        <!-- Matriz 02 -->
+        <Grid  HorizontalAlignment="Left" Height="39" Margin="166,112,0,0" VerticalAlignment="Top" Width="90" Background="#FF7D83FF">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <TextBox Name="tbx_M2_00" Grid.Row="0" Grid.Column="0" Background="#FFDDDDDD" Foreground="Red" BorderBrush="#FFFF0C00"/>
+            <TextBox Name="tbx_M2_01" Grid.Row="0" Grid.Column="1" Background="#FFDDDDDD" Foreground="Red" BorderBrush="#FFFF0C00"/>
+            <TextBox Name="tbx_M2_02" Grid.Row="0" Grid.Column="2" Background="#FFDDDDDD" Foreground="Red" BorderBrush="#FFFF0C00"/>
+        </Grid>
+        
+        <Button Name="btn_Calcular" Content="Calcular el producto" HorizontalAlignment="Left" Margin="166,220,0,0" VerticalAlignment="Top" Width="127" Height="32" BorderBrush="Red" Click="btn_Calcular_Click"/>
+
+        <!-- Matriz Producto -->
+        <Grid HorizontalAlignment="Left" Height="84" Margin="315,112,0,0" VerticalAlignment="Top" Width="112" Background="#FF7D83FF">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <TextBox Name="tbx_M3_00" IsEnabled="False" Grid.Row="0" Grid.Column="0" FontWeight="Bold" Background="#FFDDDDDD" Foreground="Red" BorderBrush="#FFFF0C00"/>
+            <TextBox Name="tbx_M3_01" IsEnabled="False" Grid.Row="0" Grid.Column="1" FontWeight="Bold" Background="#FFDDDDDD" Foreground="Red" BorderBrush="#FFFF0C00"/>
+            <TextBox Name="tbx_M3_02" IsEnabled="False" Grid.Row="0" Grid.Column="2" FontWeight="Bold" Background="#FFDDDDDD" Foreground="Red" BorderBrush="#FFFF0C00"/>
+
+            <TextBox Name="tbx_M3_10" IsEnabled="False" Grid.Row="1" Grid.Column="0" FontWeight="Bold" Background="#FFDDDDDD" Foreground="Red" BorderBrush="#FFFF0C00"/>
+            <TextBox Name="tbx_M3_11" IsEnabled="False" Grid.Row="1" Grid.Column="1" FontWeight="Bold" Background="#FFDDDDDD" Foreground="Red" BorderBrush="#FFFF0C00"/>
+            <TextBox Name="tbx_M3_12" IsEnabled="False" Grid.Row="1" Grid.Column="2" FontWeight="Bold" Background="#FFDDDDDD" Foreground="Red" BorderBrush="#FFFF0C00"/>
+
+            <TextBox Name="tbx_M3_20" IsEnabled="False" Grid.Row="2" Grid.Column="0" FontWeight="Bold" Background="#FFDDDDDD" Foreground="Red" BorderBrush="#FFFF0C00"/>
+            <TextBox Name="tbx_M3_21" IsEnabled="False" Grid.Row="2" Grid.Column="1" FontWeight="Bold" Background="#FFDDDDDD" Foreground="Red" BorderBrush="#FFFF0C00"/>
+            <TextBox Name="tbx_M3_22" IsEnabled="False" Grid.Row="2" Grid.Column="2" FontWeight="Bold" Background="#FFDDDDDD" Foreground="Red" BorderBrush="#FFFF0C00"/>
+
+        </Grid>
+        
+    </Grid>
+</Window>
