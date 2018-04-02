@@ -1,0 +1,42 @@
+﻿<Window x:Class="WPF_Ej4_SumaNNumerosMinMax.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Ejercicio_04. Suma de números en intervalo" Height="350" Width="525"
+        ResizeMode="NoResize">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                <GradientStop Color="#FF04FFA4" Offset="1"/>
+                <GradientStop Color="#FF41FFFF"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Label Content="Suma de los Números entre N1 y N2:" Foreground="#FFE0082F" HorizontalAlignment="Left" Margin="76,107,0,0" VerticalAlignment="Top" Width="371" FontWeight="Bold" FontSize="18" Background="Transparent"/>
+        <Label Content="Número inicial:" HorizontalAlignment="Left" Margin="90,163,0,0" VerticalAlignment="Top" Width="121" Foreground="#FF1555DE" FontSize="14" FontWeight="Bold"/>
+        <Label Content="Número final:" HorizontalAlignment="Left" Margin="90,203,0,0" VerticalAlignment="Top" Width="121" Foreground="#FF1555DE" FontSize="14" FontWeight="Bold"/>
+        <Button Name="btnSumar" Content="Sumar" HorizontalAlignment="Left" Margin="309,184,0,0" VerticalAlignment="Top" Width="94" Height="42" FontWeight="Bold" BorderBrush="#FFFF0B59" Foreground="#FF005DFF" Click="btnSumar_Click" KeyDown="btnSumar_KeyDown">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                    <GradientStop Color="#FFF3F3F3" Offset="0"/>
+                    <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+                    <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+                    <GradientStop Color="#FFF9F9F9" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <TextBox Name="tbxN1" HorizontalAlignment="Left" Height="23" Margin="211,169,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="58" LostFocus="tbxN1_LostFocus"/>
+        <TextBox Name="tbxN2" HorizontalAlignment="Left" Height="23" Margin="211,205,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="58" LostFocus="tbxN2_LostFocus" KeyDown="btnSumar_KeyDown"/>
+        
+        <ToolBarPanel HorizontalAlignment="Left" Height="38" Margin="41,271,0,0" VerticalAlignment="Top" Width="350" RenderTransformOrigin="0.5,0.5">
+            <StatusBar Height="27" Width="274" Margin="38,0" Background="#FF04FFA4" >
+                <TextBlock Foreground="Red" Text="La suma desde "/>
+
+                <TextBlock x:Name="tblNumero1" Text="" Foreground="Red"/>
+                <TextBlock Text="hasta" Foreground="Red"/>
+                <TextBlock x:Name="tblNumero2" Text="" Foreground="Red"/>
+                <TextBlock Text=" es: " Foreground="Red"/>
+                <TextBlock x:Name="tblResultado" Text="" Foreground="Red"/>
+            </StatusBar>
+        </ToolBarPanel>
+
+    </Grid>
+</Window>
