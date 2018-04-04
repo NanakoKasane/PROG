@@ -20,11 +20,13 @@ namespace WPF_Ej6_RelojDigital
 	/// </summary>
 	public partial class MainWindow : Window
 	{
-		System.Windows.Threading.DispatcherTimer reloj = new System.Windows.Threading.DispatcherTimer();
+		System.Windows.Threading.DispatcherTimer reloj = new System.Windows.Threading.DispatcherTimer(); 
 		TimeSpan horaAlarma;
 		DateTime fechaAlarma;
-        TimeSpan horaActual; // new TimeSpan(DateTime.Now.Hour, DateTime.Now.Minute, DateTime.Now.Second);
-        
+        TimeSpan horaActual;
+
+		Dictionary<TimeSpan, DateTime> Alarmas = new Dictionary<TimeSpan, DateTime>();  // Diccionario de alarmas
+		// Sería mejor una lista con la hora y justo a continuación su fecha y recorrerla para comprobar si el TICK actual es ese, si lo es, suena.
 
 
 		public MainWindow()
@@ -42,21 +44,28 @@ namespace WPF_Ej6_RelojDigital
 
 		}
 
-		//Inicio el reloj con la hora actual:
+		// Inicio el reloj con la hora actual. EVENTO QUE CAMBIA CADA SEGUNDO QUE PASA aumentando un segundo.
 		void hora_Tick(object sender, EventArgs e)
 		{
+			// MOSTRAR RELOJ:
 			DateTime horaNow = DateTime.Now;
 			lblHora.Content = string.Format("{0:D2}:{1:D2}:{2:D2}", horaNow.Hour, horaNow.Minute, horaNow.Second);
 
+			// Guardo la hora actual (tick actual) y la fecha actual
             horaActual = TimeSpan.Parse(lblHora.Content.ToString());
+			DateTime fechaAlarma = DateTime.Parse(tblFechaAhora.Text);
+			
+			// Comprueba si en el diccionario de alarmas está la hora y fecha actual juntas como alarma:
+			if (Alarmas.TryGetValue(horaActual, out fechaAlarma)) 
+			{
+				Console.Beep();
+				MessageBox.Show("¡¡¡ALARMA!!!");
+			}
+							
 
-            //Compruebo si el Tick actual coincide con el de la alarma, y si coincide, suena el Beep
-            if (horaActual == horaAlarma && fechaAlarma.Date == DateTime.Parse(tblFechaAhora.Text))
-            {
-                Console.Beep();
-                MessageBox.Show("¡¡¡ALARMA!!!");
-            }
-
+			// Sin diccionario comprobando una habría sido:
+			// if (horaActual == horaAlarma && fechaAlarma.Date == DateTime.Parse(tblFechaAhora.Text)) { Console.Beep(); }
+            // (Compruebo si el Tick actual coincide con el de la alarma, y si coincide, suena el Beep)
 
 		}
 
@@ -85,7 +94,6 @@ namespace WPF_Ej6_RelojDigital
 
 			//Tiempo parado:
 			//MessageBox.Show(reloj.Interval.TotalSeconds.ToString());
-			
 		
 		}
 
@@ -111,6 +119,22 @@ namespace WPF_Ej6_RelojDigital
 			{
 				horaAlarma = TimeSpan.Parse(tbx_HoraAlarma.Text);
 				fechaAlarma = DateTime.Parse(dpk_FechaAlarma.Text);
+
+				// Añado la alarma a un diccionario para poder establecer varias alarmas
+				try
+				{
+					Alarmas.Add(horaAlarma, fechaAlarma);
+				}
+				catch
+				{
+					// Si se repite la hora, la primera alarma es la que vale y dirá que la nueva no es válida
+					throw new Exception(); // Propago la excepción
+				}
+
+				// Confirmación de que se ha establecido la alarma (Si ha habido éxito):
+				string mensaje = string.Format("Ha establecido una alarma el día {0} a las {1}",
+					fechaAlarma.ToShortDateString(), horaAlarma.ToString());
+				MessageBox.Show(mensaje);
 			}
 
 			catch
