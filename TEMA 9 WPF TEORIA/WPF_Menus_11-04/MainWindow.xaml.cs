@@ -24,5 +24,22 @@ namespace WPF_Menus_11_04
         {
             InitializeComponent();
         }
+
+        private void MnuHerramientas_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Herramientas");
+        }
+
+        private void MnuAyuda_Click(object sender, RoutedEventArgs e)
+        {
+            Win_AcercaDe ventanaAcercaDe = new Win_AcercaDe();
+            ventanaAcercaDe.ShowDialog();
+        }
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            // Menu Contextual Window.Click, opcion copiar
+            MessageBox.Show("Copiando...");
+        }
     }
 }
