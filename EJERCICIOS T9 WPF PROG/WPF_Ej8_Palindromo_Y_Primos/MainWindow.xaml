@@ -1,0 +1,46 @@
+﻿<Window x:Class="WPF_Ej8_Palindromo_Y_Primos.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Frases palíndromas y Lista de números primos" Height="395.542" Width="525">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF22D484" Offset="0"/>
+                <GradientStop Color="#FF00F3FF" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+
+        <StackPanel>            
+            <Label FontSize="18" FontWeight="Bold" Margin="35,20, 8,10">COMPROBAR SI UNA FRASE ES PALÍNDROMA: </Label>
+            <Label FontSize="14" Content="Introduzca una frase:" Margin="30,0,241,10" FontWeight="Bold" />
+            <TextBox x:Name="tbx_FraseIntroducir" HorizontalAlignment="Left" Height="23" Margin="35,0,0,0" Width="269" />
+            <ComboBox Name="cbx_FrasesPalindromas" Width="200" HorizontalAlignment="Left" Margin="35,10" Text="Frases que son palíndromas" IsEditable="True" SelectionChanged="cbx_FrasesPalindromas_SelectionChanged" >
+                <ComboBoxItem>Alli ves sevilla</ComboBoxItem> <!-- Importante que no vaya a distinguir mayus de minus y QUITAR ESPACIOS (que no los tenga en cuenta) -->
+                <ComboBoxItem>A mi me mima</ComboBoxItem>
+                <ComboBoxItem>Somos o no somos</ComboBoxItem>
+                <ComboBoxItem>Ana lleva al oso la avellana</ComboBoxItem>
+                <ComboBoxItem>Adan no cede con Eva y Yave no cede con nada</ComboBoxItem>
+                <ComboBoxItem>Ligar es ser agil</ComboBoxItem>
+                <ComboBoxItem>Anita la gorda lagartona no traga la droga latina</ComboBoxItem>
+                <ComboBoxItem>Amaba la rosa a sor Alabama</ComboBoxItem>
+                <ComboBoxItem>O bebo lo vivo o vivo lo bebo</ComboBoxItem>
+                <ComboBoxItem>A Jorge no da ese dogo deseado negro JA</ComboBoxItem>
+                <ComboBoxItem>Atar al raedor y rodear la rata</ComboBoxItem>
+                <ComboBoxItem>Oso loco, no coloso</ComboBoxItem>
+            </ComboBox>
+        </StackPanel>  
+        
+        <Button Name="btnComprobarPalindromo" Content="Comprobar" Margin="332,101,99,216" Click="btnComprobarPalindromo_Click"></Button>
+
+       
+        <Separator Background="Black" Margin="0,74,0,0"/>
+        
+        <StackPanel Margin="35, 250, 0, 0">
+            <Label FontSize="18" FontWeight="Bold" Margin="0,0,10,0" Content="LISTA DE NÚMEROS PRIMOS MENORES QUE"/>
+        </StackPanel>
+        <TextBox Name="tbx_MaximoPrimo" TextWrapping="Wrap" TextAlignment="Center" FontSize="17" FontWeight="Bold" Margin="428,250,31,80" GotFocus="tbx_MaximoPrimo_GotFocus"/>
+        <Button IsEnabled="False" Name="btn_MostarListaPrimos" Content="Mostrar Lista" Margin="198,306,224,27" Click="btn_MostarListaPrimos_Click" />
+
+        
+    </Grid>
+</Window>
