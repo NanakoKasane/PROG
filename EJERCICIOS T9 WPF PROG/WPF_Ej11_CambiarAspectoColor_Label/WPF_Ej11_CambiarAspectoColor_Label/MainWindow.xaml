@@ -1,0 +1,26 @@
+﻿<Window x:Class="WPF_Ej11_CambiarAspectoColor_Label.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Labels cambiantes" Height="350" Width="525" ResizeMode="NoResize">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF41FFFF" Offset="0"/>
+                <GradientStop Color="#FF04FFA4" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Label Name="lbl1" FontSize="20" Content="Soy etiqueta 1" HorizontalAlignment="Left" Margin="142,62,0,0" VerticalAlignment="Top" MouseEnter="lbl1_MouseEnter" MouseLeave="lbl1_MouseLeave" />
+        <Label Name="lbl2" FontSize="20" Content="Soy etiqueta 2" HorizontalAlignment="Left" Margin="142,128,0,0" VerticalAlignment="Top" MouseEnter="lbl1_MouseEnter" MouseLeave="lbl1_MouseLeave"/>
+        <Label Name="lbl3" FontSize="20" Content="Soy etiqueta 3" HorizontalAlignment="Left" Margin="142,191,0,0" VerticalAlignment="Top" MouseEnter="lbl1_MouseEnter" MouseLeave="lbl1_MouseLeave"/>
+        
+        <Menu VerticalAlignment="Top" Height="20">
+            <MenuItem Header="Configuración">
+                <MenuItem Name="Mit_confAntes" VerticalAlignment="Bottom" Header="Configuración de las etiquetas inicial" Click="Mit_confAntes_Click">                 
+                </MenuItem>
+                <MenuItem Name="Mit_confRaton" Header="Configuración de las etiquetas al pasar el ratón" Click="Mit_confRaton_Click">
+                </MenuItem>
+            </MenuItem>
+        </Menu>
+
+    </Grid>
+</Window>
