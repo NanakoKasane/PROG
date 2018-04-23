@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPF_Binding_SincronizarDatos_23-04", "WPF_Binding_SincronizarDatos_23-04.csproj", "{E988CA41-48B2-4E8A-A850-B4C67FBC1D14}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E988CA41-48B2-4E8A-A850-B4C67FBC1D14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E988CA41-48B2-4E8A-A850-B4C67FBC1D14}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E988CA41-48B2-4E8A-A850-B4C67FBC1D14}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E988CA41-48B2-4E8A-A850-B4C67FBC1D14}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
