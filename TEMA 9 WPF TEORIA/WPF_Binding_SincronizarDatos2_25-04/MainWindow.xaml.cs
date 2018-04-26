@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+//---------------------------
+using Marina.WPF_Binding_SincronizarDatos_23_04;
 
 namespace WPF_Binding_SincronizarDatos_23_04
 {
@@ -23,6 +25,23 @@ namespace WPF_Binding_SincronizarDatos_23_04
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void btnCambiarTitulo_Click(object sender, RoutedEventArgs e)
+        {
+            // Cambiamos algunas propiedades del objeto film creado como recurso accediento al mismo
+            // Cambia el valor de Titulo de la clase film 
+
+            Film film = Resources["film_Infiltrados"] as Film; // Sería como-> Film film = (Film)Resources["film_Infiltrados"];
+
+            if (film != null)
+            {
+                film.Titulo = "Titanic";
+                film.Genero = Genero.Catastrofismo;
+                film.Oscar = true;
+                film.Calificacion = 4.5;
+            }
+
         }
     }
 }

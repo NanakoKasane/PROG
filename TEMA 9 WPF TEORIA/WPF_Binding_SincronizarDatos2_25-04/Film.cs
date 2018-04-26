@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 //----------------------------
 using System.ComponentModel;
+using System.Collections.ObjectModel;
 
 namespace Marina.WPF_Binding_SincronizarDatos_23_04
 {        
@@ -17,6 +18,8 @@ namespace Marina.WPF_Binding_SincronizarDatos_23_04
         Genero _genero;
         bool? _oscar; // Lo mismo que poner Nullable<bool>
         double _calificacion;
+        Director _director;
+        ObservableCollection<string> _actores = new ObservableCollection<string>();
 
         #region Propiedaes
         public string Titulo
@@ -47,6 +50,19 @@ namespace Marina.WPF_Binding_SincronizarDatos_23_04
             get { return _calificacion; }
             set { _calificacion = value; }
         }
+
+        public Director DirectorFilm
+        {
+            get { return _director; }
+            set { _director = value; }
+        }
+        public ObservableCollection<string> Actores
+        {
+            get { return _actores; }
+            set { _actores = value; }
+        }
+
+
         #endregion 
 
         // Tiene que tener un constructor por defecto vacío para poder usarlo en XML
@@ -61,20 +77,4 @@ namespace Marina.WPF_Binding_SincronizarDatos_23_04
 
     }
 
-    /// <summary>
-    /// Clase usada para informar de los cambios del valor de las propiedades 
-    /// </summary>
-    public class Notificador : INotifyPropertyChanged
-    {
-        public event PropertyChangedEventHandler PropertyChanged; // Del interfaz INotifyPropertyChanged, para que si cambies algo de la clase se propaguen los cambios a los elementos enlazados
-
-        // Método del evento:
-        protected void onPropertyChanged(string nombre)
-        {
-            if (PropertyChanged != null)
-                PropertyChanged(this, new PropertyChangedEventArgs(nombre));
-
-            
-        }
-    }
 }
