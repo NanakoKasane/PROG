@@ -1,0 +1,30 @@
+﻿<Window x:Class="WPF_Ej14_Fichero.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Ficheros" Height="350" Width="525">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF41FFFF" Offset="0"/>
+                <GradientStop Color="#FF04FFA4" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+
+        <StackPanel Orientation="Vertical">
+            <TextBlock Margin="40" Text="FICHEROS" TextAlignment="Center" FontWeight="Bold" FontSize="30"/>
+
+            <StackPanel Orientation="Horizontal">
+                <TextBlock VerticalAlignment="Top" Margin="20,20,0,0" Height="30" Width="200" Text="Introduzca la ruta del fichero: " FontSize="15" />
+                <TextBox VerticalAlignment="Top" Margin="20,20,0,0" Height="20" Width="250" x:Name="tbx_Ruta"/>
+            </StackPanel>
+            
+            <StackPanel Orientation="Horizontal">
+                <TextBlock FontSize="15" Margin="20" Text="O: "/>
+                <Button Name="btn_SelectFichero" Width="150" Height="40" Content="Seleccionar Fichero" Click="btn_SelectFichero_Click"/>
+            </StackPanel>
+            
+            <Button Name="btn_VerResult" Content="Ver resultados" Margin="20" Height="40" Width="150" Click="btn_VerResult_Click"/>
+        </StackPanel>
+
+    </Grid>
+</Window>
