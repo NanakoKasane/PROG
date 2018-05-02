@@ -1,0 +1,48 @@
+﻿<Window x:Class="WPF_Ej13_EditorTexto.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Editor de texto" Height="350" Width="525">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF41FFFF" Offset="0"/>
+                <GradientStop Color="#FF04FFA4" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="365*"/>
+            <ColumnDefinition Width="152*"/>
+        </Grid.ColumnDefinitions>
+        
+        <StackPanel Grid.ColumnSpan="2">
+            <Menu Height="20">
+                <MenuItem Header="Opciones"></MenuItem>
+            </Menu>
+
+                <RichTextBox x:Name="rtb_editor" Margin="30" Height="220" SelectionChanged="rtb_editor_SelectionChanged" TextChanged="rtb_editor_TextChanged">
+                <FlowDocument>
+                    <Paragraph Name="parrafo">hola</Paragraph>
+                </FlowDocument>
+                    <RichTextBox.ContextMenu>
+                    <ContextMenu>
+                        <MenuItem Header="Editar">
+                            <MenuItem Header="Copiar" Command="Copy" CommandTarget="{Binding ElementName=rtb_editor}"/>
+                            <MenuItem Header="Cortar" Command="Cut"/>
+                            <MenuItem Header="Pegar" Command="Paste"/>
+                        </MenuItem>
+                        <MenuItem Header="Opciones">
+                            <MenuItem Name="mit_cambiarColor" Header="Cambiar color" Click="mit_cambiarColor_Click"/>
+                            <MenuItem Name="mit_cambiarTamanio" Header="Cambiar tamaño" Click="mit_cambiarTamanio_Click"/>
+                        </MenuItem>
+                    </ContextMenu>
+                </RichTextBox.ContextMenu>
+            </RichTextBox>
+
+            <StatusBar Name="stb_barra" Height="19">
+                <TextBlock Name="tbx_barra" Text=""/>
+            </StatusBar>
+
+
+        </StackPanel>
+    </Grid>
+</Window>
