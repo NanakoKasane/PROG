@@ -1,0 +1,52 @@
+﻿<Window x:Class="WPF_DataContext_Personas_02_05.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Gestión de Personas" Height="350" Width="525">
+    
+    <Window.Resources>
+        <Style TargetType="TextBlock" x:Key="Fuente">
+            <Setter Property="FontFamily" Value="Seoge UI Black"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+        </Style>
+    </Window.Resources>
+    
+    <Grid>
+        
+        <StackPanel Orientation="Vertical">
+            
+            <!-- Titulo-->
+            <StackPanel>
+                <TextBlock Margin="10" TextAlignment="Center" FontSize="25" FontWeight="Bold" Text="DATOS DE PERSONAS:"/>
+            </StackPanel>
+            
+            <!-- Datos de la Persona -->
+            <StackPanel Orientation="Horizontal">
+                <!-- Nombre de los campos a rellenar -->
+                <StackPanel Margin="30" Name="stp_campos" Orientation="Vertical">
+                    <TextBlock Margin="10" Text="Nombre: " Style="{StaticResource ResourceKey=Fuente}"/>
+                    <TextBlock Margin="10" Text="Apellidos: " Style="{StaticResource ResourceKey=Fuente}"/>
+                    <TextBlock Margin="10" Text="Fecha de Nacimiento: " Style="{StaticResource ResourceKey=Fuente}"/>
+                    <TextBlock Margin="10" Text="Estatura: " Style="{StaticResource ResourceKey=Fuente}" />
+                </StackPanel>
+                
+                <!-- Valores de los datos rellenados-->
+                <StackPanel Margin="30" Name="stp_datos" Orientation="Vertical">
+                    <TextBlock Margin="10" Text="{Binding Nombre, Mode=TwoWay}" />
+                    <TextBlock Margin="10" Text="{Binding Apellidos, Mode=TwoWay}" />
+                    <TextBlock Margin="10" Text="{Binding FechaNacimiento}" />
+                    <TextBlock Margin="10" Text="{Binding Estatura}"/>
+                </StackPanel>
+            </StackPanel>
+            
+            <!-- Botones para pasar a la siguiente/anterior persona -->
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Button Height="50" Width="100" Name="btn_Anterior" FontFamily="Webdings" Content="7" FontSize="40" Click="btn_Anterior_Click" ></Button>
+                <Button Margin="50,0,0,0" Height="50" Width="100" Name="btn_Siguiente" FontFamily="Webdings" Content="8" FontSize="40" Click="btn_Siguiente_Click" ></Button>
+
+            </StackPanel>
+            
+        </StackPanel>
+        
+    </Grid>
+</Window>
