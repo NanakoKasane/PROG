@@ -1,0 +1,22 @@
+﻿<Application x:Class="WPF_Recursos_07_05.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <!--Recursos-->
+        <SolidColorBrush x:Key="colorFondo3" Color="DarkViolet" />
+        <SolidColorBrush x:Key="colorFondo4" Color="LemonChiffon" />
+
+        <!-- Solo si no tiene más recursos: -->
+        <!--  <ResourceDictionary Source="Dic_Colores1.xaml" />  -->
+        
+        <!-- Si quieres mezclar recursos en App y uno o varios diccionarios de recursos: -->
+        <ResourceDictionary x:Key="diccionarios">
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Dic_Colores1.xaml"/>
+                <ResourceDictionary Source="Dic_Colores2.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+                            
+    </Application.Resources>
+</Application>
