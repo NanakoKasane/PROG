@@ -1,0 +1,103 @@
+﻿<Window x:Class="WPF_Binding_SincronizarDatos_23_04.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Binding" Height="350" Width="525"
+        xmlns:ejemplo="clr-namespace:Marina.WPF_Binding_SincronizarDatos_23_04"
+        xmlns:system="clr-namespace:System;assembly=mscorlib">
+    <!-- Añado el espacio de nombres system. Para añadir la DLL se pone separado por ; assembly=dll -->
+
+    <!-- Le añado el espacio de nombres de Film para poder acceder ahí -->
+    <!-- clr : common languaje runtime. Porque se enlazará en tiempo de ejecucion -->
+
+    <!-- Creo un objeto de Film en un recurso estático -->
+    <Window.Resources>
+        <!-- Los recursos deben tener un nombre/clave -->
+        <ejemplo:Film x:Key="film_Infiltrados"
+                      Titulo="Infiltrados"
+                      Genero="Mafia"
+                      Oscar="{x:Null}"
+                      Calificacion="4.7">
+
+            <!-- Añado datos del director -->
+            <ejemplo:Film.DirectorFilm>
+                <ejemplo:Director Nombre="Martin Scorcese" Nacionalidad="USA"/> <!-- Relleno el objeto Director -->
+            </ejemplo:Film.DirectorFilm>
+
+            <!-- Añado los actores-->
+            <ejemplo:Film.Actores>
+                <system:String>Leonardo Di caprio</system:String>
+                <system:String>Jacj Nicholson</system:String>
+                <system:String>Mat Dammon</system:String>
+                <system:String>Martin Scheen</system:String>
+                <system:String>Alec Baldwin</system:String>
+            </ejemplo:Film.Actores>
+
+        </ejemplo:Film>
+
+    </Window.Resources>
+
+    <Grid>
+
+        <TabControl Background="AliceBlue">
+
+            <!-- Ver el objeto de negocios -->
+            <TabItem Header="Visualizar Film">
+                <StackPanel Orientation="Horizontal" Margin="10,10,35,43">
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock Text="Nombre del Film:" Margin="10"/>
+                        <TextBlock Text="Género:" Margin="10"/>
+                        <TextBlock Text="Ganó Oscar?" Margin="10"/>
+                        <TextBlock Text="Calificacion" Margin="10"/>
+                        <TextBlock Text="Director: " Margin="10" />
+                        <TextBlock Text="Primer protagonista: " Margin="10"/>
+                    </StackPanel>
+                    
+                    <StackPanel DataContext="{StaticResource film_Infiltrados}" Margin="10,0,35,19" Width="221">
+                        <TextBlock Margin="10,10,-75,10" FontWeight="Bold" Text="{Binding Titulo}"/> <!-- Source={StaticResource ResourceKey=film_Infiltrados}}"/> -->
+                        <TextBlock Margin="10" FontWeight="Bold" Text="{Binding Genero}"/>  <!-- No hace falta ya: , Source={StaticResource ResourceKey=film_Infiltrados}}-->
+                        <TextBlock Margin="10" FontWeight="Bold" Text="{Binding Oscar}"/> <!--Source={StaticResource ResourceKey=film_Infiltrados}}"/> -->
+                        <TextBlock Margin="10" FontWeight="Bold" Text="{Binding Calificacion}"/> <!--Source={StaticResource ResourceKey=film_Infiltrados}}"/> -->
+                        <TextBlock Margin="10" FontWeight="Bold" Text="{Binding DirectorFilm.Nombre}"/> <!--Source={StaticResource ResourceKey=film_Infiltrados}}"/> -->
+                        <TextBlock Margin="10" FontWeight="Bold" Text="{Binding Actores[0]}"/> <!-- , Source={StaticResource ResourceKey=film_Infiltrados}}-->
+                    </StackPanel>
+                </StackPanel>
+
+            </TabItem>
+
+
+            <!-- Editar -->
+            <TabItem Header="Editar Film">
+                <StackPanel Orientation="Horizontal" Margin="10,10,35,43">
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock Text="Nombre del Film:" Margin="10"/>
+                        <TextBlock Text="Género:" Margin="10"/>
+                        <TextBlock Text="Ganó Oscar?" Margin="10"/>
+                        <TextBlock Text="Calificacion" Margin="10"/>
+                    </StackPanel>
+                    <StackPanel Margin="10,0,35,65" Width="218">
+                        <!-- Por defecto el enlace del TextBox es TwoWay (en los 2 sentidos) -->
+                        <TextBox Margin="10" FontWeight="Bold" Text="{Binding Titulo, Source={StaticResource ResourceKey=film_Infiltrados}}"/>
+                        <TextBox Margin="10, 5,5,5" FontWeight="Bold" Text="{Binding Genero, Source={StaticResource ResourceKey=film_Infiltrados}}"/>
+                        <TextBox Margin="10,10,5,5" FontWeight="Bold" Text="{Binding Oscar, Source={StaticResource ResourceKey=film_Infiltrados}}"/>
+
+                        <!-- Dato a validar-->
+                        <TextBox Margin="10,5,5,5" FontWeight="Bold" >
+                            <TextBox.Text>
+                                <Binding Path="Calificacion" Source="{StaticResource ResourceKey=film_Infiltrados}" NotifyOnValidationError="True">
+                                    <Binding.ValidationRules>
+                                        <ejemplo:RangeValidationRule MinValue="0.0" MaxValue="5.0"/>
+                                    </Binding.ValidationRules>
+                                </Binding>
+                            </TextBox.Text>
+                        </TextBox>
+                        
+                    </StackPanel>
+                </StackPanel>
+            </TabItem>
+        </TabControl>
+
+        <Button Name="btnCambiarTitulo" Margin="329,264,28,10" Content="Cambiar Título y otros" Click="btnCambiarTitulo_Click"/>
+        <Button Name="btn_IrColecciones" Margin="10,264,350,10" Content="IR A COLECCIONES" Click="btn_IrColecciones_Click"/>
+
+    </Grid>
+</Window>
