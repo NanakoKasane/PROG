@@ -1,0 +1,45 @@
+﻿<Window x:Class="WPF_Ej16_Fichero_Clientes.Win_ListadoClientes"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Win_ListadoClientes" Height="336.042" Width="421.908"
+        xmlns:clientes="clr-namespace:WPF_Ej16_Fichero_Clientes" ResizeMode="NoResize"
+        >
+    
+    <Window.Resources>
+        <clientes:ListaClientes x:Key="listaClientes">
+        </clientes:ListaClientes>
+        
+        <DataTemplate x:Key="Plantilla">
+            <StackPanel Name="stpDatos" Orientation="Horizontal">
+                <StackPanel Orientation="Vertical">
+                    <TextBlock FontWeight="Bold" Text="DNI: "/>
+                    <TextBlock FontWeight="Bold" Text="Edad: "/>
+                    <TextBlock FontWeight="Bold" Text="Sueldo: "/>
+                    <TextBlock FontWeight="Bold" Text="Apellidos: "/>
+                    <TextBlock FontWeight="Bold" Text="Nombre: "/>
+                    <TextBlock/>
+                </StackPanel>
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Text="{Binding Dni}"/>
+                    <TextBlock Text="{Binding Edad}"/>
+                    <TextBlock Text="{Binding Sueldo}"/>
+                    <TextBlock Text="{Binding Apellidos}"/>
+                    <TextBlock Text="{Binding Nombre}"/>
+                    <TextBlock/>
+                </StackPanel>
+            </StackPanel>
+
+        </DataTemplate>
+        
+    </Window.Resources>
+    
+    
+    <Grid>
+
+        <StackPanel Name="stp_ListadoClientes">
+            <TextBlock TextAlignment="Center" Margin="10" FontSize="20" FontWeight="Bold" Text="LISTADO DE CLIENTES"/>
+            <ListBox ItemsSource="{Binding ListaDeClientes}" SelectedIndex="0" ItemTemplate="{StaticResource Plantilla}" x:Name="lsb_listaClientes" Height="200" />
+        </StackPanel>
+
+    </Grid>
+</Window>

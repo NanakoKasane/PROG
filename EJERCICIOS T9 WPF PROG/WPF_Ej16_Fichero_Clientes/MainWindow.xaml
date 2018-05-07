@@ -1,0 +1,15 @@
+﻿<Window x:Class="WPF_Ej16_Fichero_Clientes.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Fichero de Clientes" Height="352.789" Width="331.175" ResizeMode="NoResize">
+    <Grid>
+        <StackPanel Orientation="Vertical">
+            <Button Name="btn_CrearFichero" Margin="0,30,0,0" Height="40" Width="100" Content="Crear Fichero" Click="btn_CrearFichero_Click"/>
+            <Button IsEnabled="False" Name="btn_AbrirFichero" Margin="0,30,0,0" Height="40" Width="100" Content="Abrir Fichero" Click="btn_AbrirFichero_Click"/>
+            <Button Name="btn_EditarFicha" Margin="0,30,0,0" Height="40" Width="100" Content="Editar Ficha" Click="btn_EditarFicha_Click"/>
+            <Button Name="btn_VerListado" Margin="0,30,0,0" Height="40" Width="150" Content="Ver Listado de Clientes" Click="btn_VerListado_Click"/>
+
+        </StackPanel>
+        
+    </Grid>
+</Window>
