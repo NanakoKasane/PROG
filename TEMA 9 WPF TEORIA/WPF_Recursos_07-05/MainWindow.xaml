@@ -11,7 +11,7 @@
     
     <Grid>
         <Button Name="btn_AlternarColor" Content="Alternar color" HorizontalAlignment="Left" Margin="116,57,0,0" VerticalAlignment="Top" Width="128" Height="58" Background="{StaticResource colorFondo1}" Click="btn_AlternarColor_Click"/>
-        <Ellipse Name="elp_EliseJgl" Fill="{StaticResource colorFondo3}" HorizontalAlignment="Left" Height="100" Margin="139,166,0,0" Stroke="Black" VerticalAlignment="Top" Width="197"/>
+        <Ellipse Name="elp_EliseJgl" Fill="{DynamicResource colorFondo3}" HorizontalAlignment="Left" Height="100" Margin="139,166,0,0" Stroke="Black" VerticalAlignment="Top" Width="197"/>
         <Button Content="Cambiar Elipse" HorizontalAlignment="Left" Margin="294,66,0,0" VerticalAlignment="Top" Width="114" Height="40" Click="Button_Click"/>
 
     </Grid>
