@@ -1,0 +1,20 @@
+﻿<Window x:Class="WPF_Ej27_Sudoku.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="SUDOKU" Height="391.791" Width="377.239" Background="Black" ResizeMode="NoResize">
+    <Grid>
+        <StackPanel>
+            <Label HorizontalContentAlignment="Center" Foreground="Wheat" FontSize="30">Sudoku</Label>
+            <Separator></Separator>
+            
+        </StackPanel>
+        
+        <Grid Name="grd_RejillaPrinciJuego" Background="White" Margin="10,73,10,51">
+            
+        </Grid>
+        
+        <Button Name="btn_Nuevo" Content="Nuevo" Margin="53,320,243,10" BorderBrush="White" Foreground="White" Background="Black" Click="btn_Nuevo_Click"></Button>
+        <Button Name="btn_Solucion" Content="Solucion" Margin="235,320,61,10" BorderBrush="White" Foreground="White" Background="Black" Click="btn_Solucion_Click"></Button>
+
+    </Grid>
+</Window>
