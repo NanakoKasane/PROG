@@ -1,0 +1,51 @@
+﻿<Window x:Class="WPF_Ej18_ClaseJARRA.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="JARRAS" Height="350" Width="525">
+    <Grid>
+        
+        <StackPanel Orientation="Vertical">
+            <StackPanel Margin="10" Orientation="Horizontal">
+                <TextBlock Margin="10,10,0,0" Text="Jarra A"></TextBlock>
+                <TextBox Width="25" Margin="10" IsEnabled="False">7</TextBox>
+                <Button  IsEnabled="False" Margin="100,10,10,10">Crear Jarras</Button>
+                
+                <TextBlock Margin="100,10, 0,0" Text="Jarra B"></TextBlock>
+                <TextBox Margin="10" HorizontalAlignment="Right" Width="25" IsEnabled="False">5</TextBox>
+            </StackPanel>
+            <Grid Height="260">
+                <Button Name="btn_VaciarA" Content="Vaciar" Margin="39,82,375,149" Height="29" Click="btn_VaciarA_Click"/>
+                <Button Name="btn_LlenarB" Content="Llenar" Margin="346,22,77,209" Height="29" Click="btn_LlenarB_Click"/>
+                <Button Name="btn_LlenarA" Content="Llenar" Margin="39,22,375,209" Height="29" Click="btn_LlenarA_Click" />
+                <Button Name="btn_VaciarB" Content="Vaciar" Margin="346,82,68,149" Height="29" Click="btn_VaciarB_Click"/>
+                <Button Name="btn_LlenarBConA" Content="-->" HorizontalAlignment="Left" Margin="194,22,0,0" VerticalAlignment="Top" Width="113" Click="btn_LlenarBConA_Click"/>
+                <Button Name="btn_LlenarAConB" Content="&lt;--" HorizontalAlignment="Left" Margin="194,59,0,0" VerticalAlignment="Top" Width="113" Click="btn_LlenarAConB_Click"/>
+                <Button Name="btnFinalizar" Content="Finalizar" HorizontalAlignment="Left" Margin="194,91,0,0" VerticalAlignment="Top" Width="113" Click="btnFinalizar_Click"/>
+
+
+                <ProgressBar Name="pgb_JarraA" Width="150" Margin="-300,137,0,105" Maximum="7" ValueChanged="pgb_JarraA_ValueChanged"/>
+                <ProgressBar Name="pgb_JarraB" Width="150" Margin="300,137,68,105" Maximum="5" ValueChanged="pgb_JarraB_ValueChanged"/>
+
+                <StackPanel Margin="0,177,0,0">
+                    <ScrollViewer HorizontalScrollBarVisibility="Auto" Name="Scroll" Margin="10,0,62,0" Height="54">
+                        <TextBox IsReadOnly="True" Name="tbx_Estadisticas" HorizontalAlignment="Left" Height="48" TextWrapping="Wrap" VerticalAlignment="Top" Width="415" TextChanged="tbx_Estadisticas_TextChanged"/>
+
+                    </ScrollViewer>
+                </StackPanel>
+                <Button Content="Demo" HorizontalAlignment="Left" Margin="432,230,0,0" VerticalAlignment="Top" Width="75"/>
+                <TextBlock FontWeight="Bold" HorizontalAlignment="Left" Margin="10,232,0,0" TextWrapping="Wrap" Text="Las Jarras se han inicializado" VerticalAlignment="Top" Height="20" Width="398"/>
+               
+                <TextBlock Name="tbx_progresoA" HorizontalAlignment="Left" Margin="93,139,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+                <TextBlock Name="tbx_progresoB" HorizontalAlignment="Left" Margin="346,137,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+
+            </Grid>
+
+
+
+
+
+
+        </StackPanel>
+        
+    </Grid>
+</Window>
