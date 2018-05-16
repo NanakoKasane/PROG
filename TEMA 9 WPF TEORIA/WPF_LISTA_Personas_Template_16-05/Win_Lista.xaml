@@ -1,0 +1,9 @@
+﻿<Window x:Class="WPF_Personas_Template_Lista_10_05.Win_Lista"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Win_Lista" Height="300" Width="454.511">
+    <Grid>
+        <ListBox Name="lbl_listaPersonas" ItemsSource="{Binding}" ItemTemplate="{StaticResource plantillaPs}" Margin="19,10,28,30" />
+
+    </Grid>
+</Window>
